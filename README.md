@@ -1,55 +1,87 @@
-# DSCI551-Project
+# Artwork Management System
 
-Welcome to the DSCI551 Project GitHub repository! This project aims to develop an Artwork Management System to manage artwork information and product reviews efficiently.
+Welcome to the Artwork Management System GitHub repository! This system is designed to manage artwork information and product reviews efficiently. Below are the instructions for setting up the project environment.
 
-## Setup
+## MongoDB Setup
 
-To set up the project environment, follow these steps:
+1. **Install MongoDB**: Install MongoDB on your local machine. You can download MongoDB from the [official website](https://www.mongodb.com/try/download/community).
 
-### MongoDB Setup
+2. **Access MongoDB Shell**: Open the terminal and type the following command to access the MongoDB shell:
 
-1. Install MongoDB on your local machine. If you haven't installed MongoDB yet, follow the instructions provided in the [official MongoDB documentation](https://docs.mongodb.com/manual/installation/).
+    ```bash
+    mongosh
+    ```
 
-2. Once MongoDB is installed, open a terminal and execute the following commands:
+3. **Create Databases and Users**: Execute the following commands in the MongoDB shell to create databases and users:
 
-```bash
-#!/bin/bash
+    ```javascript
+    // Create database_0
+    db = db.getSiblingDB('database_0')
+    db.createUser({
+      user: 'Nithya',
+      pwd: '1999',
+      roles: [{ role: 'root', db: 'admin' }]
+    })
 
-# Access MongoDB shell
-mongosh
+    // Create database_1
+    db = db.getSiblingDB('database_1')
+    db.createUser({
+      user: 'Shivani',
+      pwd: '1999',
+      roles: [{ role: 'root', db: 'admin' }]
+    })
 
-# Create databases and users
-echo "Creating databases and users..."
-echo "Creating database 'database_0'..."
-db = db.getSiblingDB('database_0')
-db.createUser({
-  user: 'Nithya',
-  pwd: '1999',
-  roles: [{ role: 'root', db: 'admin' }]
-})
-echo "Creating database 'database_1'..."
-db = db.getSiblingDB('database_1')
-db.createUser({
-  user: 'Shivani',
-  pwd: '1999',
-  roles: [{ role: 'root', db: 'admin' }]
-})
-echo "Creating database 'orders'..."
-db = db.getSiblingDB('orders')
-db.createUser({
-  user: 'Users',
-  pwd: '1999',
-  roles: [{ role: 'root', db: 'admin' }]
-})
+    // Create orders database
+    db = db.getSiblingDB('orders')
+    db.createUser({
+      user: 'Users',
+      pwd: '1999',
+      roles: [{ role: 'root', db: 'admin' }]
+    })
+    ```
 
-# Load dataset
-echo "Loading dataset into databases..."
-# Add instructions to load dataset into MongoDB databases
+4. **Load Dataset**: Load the provided dataset into the databases based on the hash values.
 
-# Set up backend
-echo "Setting up backend..."
-# Add instructions to clone backend repository, install dependencies, and start backend server
+    - The dataset is available in the link [ArtDataset.json](https://drive.google.com/file/d/1s4_rJFnQjtLRoyrohJ55hu4YC8e3qH_C/view?usp=sharing).
 
-# Set up frontend
-echo "Setting up frontend..."
-# Add instructions to clone frontend repository, install dependencies, and start frontend server
+## Backend Setup
+
+1. **Clone Backend Repository**: Clone the backend repository:
+
+    ```bash
+    git clone https://github.com/NithyashreeGS30/DSCI551-Project.git
+    ```
+
+2. **Install Dependencies**: Navigate to the backend directory and install the required dependencies using pip. For example:
+
+    ```bash
+    cd backend-repo
+    pip install pyMongo
+    ```
+
+3. **Run Backend Server**: Once the installation of all the packages is completed, run the following command to start the backend server:
+
+    ```bash
+    uvicorn artisan:app --reload
+    ```
+
+## Frontend Setup
+
+1. **Clone Frontend Repository**: Clone the frontend repository:
+
+    ```bash
+    git clone https://github.com/NithyashreeGS30/DSCI551-Project.git
+    ```
+
+2. **Install Dependencies**: Navigate to the frontend directory and install all the required packages using npm:
+
+    ```bash
+    cd frontend-repo
+    npm install
+    ```
+
+3. **Run Frontend Project**: After installing the packages, run the following command to start the frontend project:
+
+    ```bash
+    npm run
+    ```

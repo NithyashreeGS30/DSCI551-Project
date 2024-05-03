@@ -1,0 +1,49 @@
+/* BodyPage.css */
+
+.product-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+}
+
+.product-image {
+  margin-right: 10px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-weight: bold; /* Make product name bold */
+}
+
+.product-title {
+  margin-top: 5px;
+  color: #555;
+}
+
+.product-price {
+  margin-top: 5px;
+  color: #ff9900;
+}
+
+.product-condition {
+  margin-top: 10px;
+}
+
+.add-to-cart-button {
+  margin-top: 10px;
+  background-color: #ff9900;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+}

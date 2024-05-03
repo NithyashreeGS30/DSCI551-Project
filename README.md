@@ -85,3 +85,39 @@ Welcome to the Artwork Management System GitHub repository! This system is desig
     ```bash
     npm run
     ```
+
+4. **File Structure**:
+    ```
+    frontend-repo/
+    ├── public/
+    │   ├── manifest.json
+    │   └── ...
+    ├── src/
+    │   ├── header/
+    │   │   ├── header.js
+    │   │   └── header.css
+    │   ├── signin/
+    │   │   ├── signin.js
+    │   │   └── signin.css
+    │   ├── checkoutpage/
+    │   │   ├── checkoutpage.js
+    │   │   └── checkoutpage.css
+    │   ├── App.js
+    │   ├── adminBody.js
+    │   └── ...
+    ├── README.md
+    ├── package-lock.json
+    └── package.json
+    ```
+
+    - **public/**: Contains files related to the public assets of the frontend project.
+    - **src/**: Contains the source code of the frontend project.
+        - **header/**: Contains the header component files.
+        - **signin/**: Contains the signin page component files.
+        - **checkoutpage/**: Contains the checkout page component files.
+        - **App.js**: Handles routing of components.
+        - **adminBody.js**: Contains the body page for admin functionality.
+        - *Other component folders/files...*
+    - **README.md**: Information about the frontend project.
+    - **package-lock.json**: Lock file for npm dependencies.
+    - **package.json**: Contains metadata about the project and dependencies.
